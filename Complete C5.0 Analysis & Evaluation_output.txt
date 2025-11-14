@@ -1,0 +1,72 @@
+============================================================
+C5.0 MODEL OPTIMIZATION - PRUNING ANALYSIS
+Output saved to: new_output_20251114_115509.txt
+============================================================
+
+Loading dataset...
+Dataset loaded: 40 records, 24 features
+
+============================================================
+PREPROCESSING
+============================================================
+✓ Encoded 16 categorical columns
+✓ Target: Investment_Avenues
+✓ Features: 22
+
+Training set: 28 samples
+Test set: 12 samples
+
+============================================================
+C5.0 ALGORITHM WITH PRUNING OPTIMIZATION
+============================================================
+
+1. Base C5.0 Model (No Pruning):
+------------------------------------------------------------
+   Tree Depth: 2
+   Number of Leaves: 3
+   Accuracy: 0.8333
+
+2. C5.0 with Pre-Pruning:
+------------------------------------------------------------
+   Tree Depth: 1
+   Number of Leaves: 2
+   Accuracy: 0.9167
+
+3. C5.0 with Cost Complexity Pruning (Post-Pruning):
+------------------------------------------------------------
+   Computing pruning path...
+   Testing 2 alpha values...
+   Optimal Alpha: 0.000000
+   Tree Depth: 2
+   Number of Leaves: 3
+   Accuracy: 0.8333
+
+4. C5.0 with Combined Pruning (Pre + Post):
+------------------------------------------------------------
+   Tree Depth: 1
+   Number of Leaves: 2
+   Accuracy: 0.9167
+
+============================================================
+PRUNING OPTIMIZATION RESULTS
+============================================================
+
+                  Model  Tree Depth  Num Leaves  Accuracy
+Base C5.0 (No Pruning)           2           3  0.833333
+           Pre-Pruning           1           2  0.916667
+    Post-Pruning (CCP)           2           3  0.833333
+      Combined Pruning           1           2  0.916667
+
+------------------------------------------------------------
+IMPROVEMENTS FROM PRUNING:
+------------------------------------------------------------
+Complexity Reduction: 3 → 2 leaves (33.3% reduction)
+Depth Reduction: 2 → 1 levels
+Accuracy Change: 0.8333 → 0.9167
+
+✓ Best Model: Pre-Pruning
+✓ Achieves optimal balance between complexity and accuracy
+
+============================================================
+OPTIMIZATION COMPLETE!
+============================================================
